@@ -2,47 +2,105 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <script src="{% static 'js/base.js' %}" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!--font awesome for the contact icons -->
 </head>
+
 <body>
+    <canvas id="background-canvas"></canvas>
     <div class="container fade-in">
         <header>
-            <h1>👨‍💻 Amal Gregory</h1>
-            <p>CS Undergrad • Tech Explorer • Developer</p>
+            <h1>Amal Gregory</h1>
+            <p>CS Undergrad • ML Engineer • Software Developer</p>
         </header>
 
         <nav>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <a href="#skills">Skills & Projects</a>
+            <a href="#">Blog</a>
+            <a href="#">Community Wall</a>
         </nav>
 
-        <section id="about">
+        <section id="about" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
             <h2>About Me</h2>
-            <p>Hi, I'm Amal — passionate about building tech that solves real problems.</p>
+
+            <div style="display: flex; align-items: flex-start; gap: 2rem; width: 100%;">
+                <div style="flex: 2;">
+                    <!-- i need to use margin-top here to keep the para inline with the picture-->
+                    <p style="margin-top: 0;">I'm Amal Gregory, a final-year Computer Science student at VIT, Vellore.
+                        I'm passionate about machine
+                        learning and software development, having interned at Flextronics Technologies building
+                        predictive
+                        models
+                        and at Tech Mahindra creating data visualization applications using C++.</p>
+                    <p>Beyond coding, I'm a national-level competitive debater and a member of VIT's Debate Society.
+                        I've
+                        represented my university internationally as an Uhuru Worlds ESL Finalist, ranking among the top
+                        teams
+                        in
+                        the world.</p>
+                    <p>When I'm not debugging code or crafting arguments, you'll find me playing tennis or basketball. I
+                        love
+                        finding intersections between my interests and skills, in hopes of making real-world impact.</p>
+                </div>
+
+                <div style="flex: 1; display: flex; justify-content: center;">
+                    <img src="static\assets\profile_pic.jpg" alt="Profile Picture"
+                        style="max-width: 200px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);" />
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center;">
+                <a href="static\assets\Amal_Gregory_Resume_Portfolio.pdf" download>
+                    <button style="padding: 0.75rem 2rem; font-size: 1rem; cursor: pointer;">Download Resume</button>
+                </a>
+            </div>
         </section>
 
+
         <section id="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li>Email: amal@example.com</li>
-                <li>GitHub: <a href="https://github.com/amaldgregory">yourusername</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/amal-gregory">yourprofile</a></li>
-            </ul>
+            <h2>Contact Information</h2>
+            <div class="contact_columns">
+                <div>
+                    <ul style = "list-style-type: none;">
+                        <li><a href="mailto:amalgregory123@gmail.com" title="Email">
+                                <i class="fas fa-envelope" style="font-size: 2rem; color: white"></i>
+                            </a>amalgregory123@gmail.com</li>
+                        <li><a href="https://github.com/amaldgregory" target="_blank" title="GitHub">
+                                <i class="fab fa-github" style="font-size: 2rem; color: #6e5494"></i>
+                            </a>amaldgregory</li>
+                        <li><a href="https://linkedin.com/in/amal-gregory" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin" style="font-size: 2rem; color: #0A66C2;"></i>
+                            </a>amal-gregory</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul style="list-style-type: none;">
+                        <li>
+                            <i class="fas fa-phone" style="font-size: 2rem; color: white"></i>
+                            +91 9731142309
+                        </li>
+                        <li>Bangalore, India</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Skills & Projects</h2>
             <ul>
-                <li>Python, Django, JavaScript, React</li>
-                <li>Projects: <a href="https://github.com/yourusername/yourproject">Your Project</a></li>
+                <li>Python, Django, C++, Java</li>
+                <li>GitHub link: <a href="https://github.com/yourusername/yourproject">Skill Fund</a></li>
             </ul>
         </section>
     </div>
 </body>
+
 </html>
