@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/base.js' %}" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <h1>👨‍💻 Amal Gregory</h1>
+            <p>CS Undergrad • Tech Explorer • Developer</p>
+        </header>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#skills">Skills & Projects</a>
+        </nav>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Amal — passionate about building tech that solves real problems.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <ul>
+                <li>Email: amal@example.com</li>
+                <li>GitHub: <a href="https://github.com/amaldgregory">yourusername</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/amal-gregory">yourprofile</a></li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills & Projects</h2>
+            <ul>
+                <li>Python, Django, JavaScript, React</li>
+                <li>Projects: <a href="https://github.com/yourusername/yourproject">Your Project</a></li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

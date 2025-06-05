@@ -1,0 +1,70 @@
+body {
+    font-family: 'Space Mono', monospace;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #00ffcc;
+    text-decoration: none;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00ffcc;
+    transition: width 0.3s;
+    margin: auto;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #1a1a1a;
+}
+
+a {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
