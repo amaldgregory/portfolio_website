@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Wall - Amal Gregory</title>
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/communitynotes.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+<a href="{% url 'portfolio_home' %}">About</a>
+<a href="{% url 'portfolio_home' %}#contact">Contact</a>
+<a href="{% url 'portfolio_home' %}#skills">Skills & Projects</a>
+<a href="#">Blog</a>
+<a href="{% url 'community_wall' %}">Community Wall</a>
+</nav>
+
+<div class="wall-container fade-in">
+<!-- Page Header -->
+<div class="page-header">
+<h1>Community Wall</h1>
+<p>Share your thoughts and connect with others</p>
+</div>
+
+<!-- Django Messages -->
+{% if messages %}
+<div class="messages">
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+{{ message }}
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
+<!-- Community Wall Messages -->
+{% for msg in wall_messages %}
+<div class="sticky-note" id="note-{{ forloop.counter }}">
+<div class="note-name">{{ msg.name }}</div>
+<div class="note-text">{{ msg.text }}</div>
+<div class="note-date">{{ msg.created_at|date:"M d" }}</div>
+</div>
+{% endfor %}
+
+<!-- Form Container -->
+<div class="form-container">
+<h5>Add to Community Wall</h5>
+<form method="post">
+{% csrf_token %}
+<div>
+{{ form.name }}
+</div>
+<div>
+{{ form.text }}
+</div>
+<button type="submit">Post Message</button>
+</form>
+</div>
+</div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const notes = document.querySelectorAll('.sticky-note');
+
+// Use window dimensions instead of container dimensions
+const containerWidth = window.innerWidth - 240; // Note width + margin
+const containerHeight = window.innerHeight - 200; // Account for nav and form
+
+const positions = [];
+
+notes.forEach((note, index) => {
+let attempts = 0;
+let positioned = false;
+
+while (!positioned && attempts < 50) {
+// Ensure notes don't appear under the header or form
+const x = Math.random() * Math.max(containerWidth - 320, 100); // Avoid form area
+const y = Math.random() * Math.max(containerHeight - 400, 100) + 250; // Start below header
+
+// Check for overlap with existing positions
+let overlap = false;
+for (let pos of positions) {
+if (Math.abs(x - pos.x) < 220 && Math.abs(y - pos.y) < 170) {
+overlap = true;
+break;
+}
+}
+
+if (!overlap) {
+note.style.left = x + 'px';
+note.style.top = y + 'px';
+
+// Add slight rotation for realistic effect
+const rotation = (Math.random() - 0.5) * 15;
+note.style.setProperty('--rotation', rotation + 'deg');
+note.style.transform = `rotate(${rotation}deg)`;
+
+positions.push({ x, y });
+positioned = true;
+}
+attempts++;
+}
+
+// Fallback positioning if no space found
+if (!positioned) {
+const fallbackX = 50 + (index % 4) * 250;
+const fallbackY = 300 + Math.floor(index / 4) * 180;
+note.style.left = fallbackX + 'px';
+note.style.top = fallbackY + 'px';
+
+const rotation = (Math.random() - 0.5) * 10;
+note.style.transform = `rotate(${rotation}deg)`;
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+        /* Sticky Notes - Updated colors for dark theme */
+        .sticky-note {
+            position: absolute;
+            width: 200px;
+            min-height: 150px;
+            padding: 15px;
+            background: #333;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform-origin: center;
+            font-family: 'Space Mono', monospace;
+            border: 1px solid #444;
+            color: #e0e0e0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sticky-note:hover {
+            transform: translateY(-2px) rotate(var(--rotation));
+            box-shadow: 0 12px 40px rgba(0, 255, 204, 0.1);
+        }
+
+        .sticky-note:nth-child(2n) {
+            background: linear-gradient(135deg, #2d4a4a, #1a3333);
+            border-color: #00ffcc;
+        }
+
+        .sticky-note:nth-child(3n) {
+            background: linear-gradient(135deg, #4a2d4a, #331a33);
+            border-color: #cc00ff;
+        }
+
+        .sticky-note:nth-child(4n) {
+            background: linear-gradient(135deg, #2d2d4a, #1a1a33);
+            border-color: #0099ff;
+        }
+
+        .sticky-note:nth-child(5n) {
+            background: linear-gradient(135deg, #4a2d2d, #331a1a);
+            border-color: #ff6699;
+        }
+
+        .sticky-note:nth-child(6n) {
+            background: linear-gradient(135deg, #4a4a2d, #333319);
+            border-color: #ffcc00;
+        }
+
+        .note-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #00ffcc;
+        }
+
+        .note-text {
+            font-size: 12px;
+            line-height: 1.4;
+            word-wrap: break-word;
+            color: #e0e0e0;
+        }
+
+        .note-date {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 10px;
+            opacity: 0.7;
+            color: #999;
+        }
+
+        /* Form Container - Updated to match theme */
+        .form-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(37, 37, 37, 0.95));
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            z-index: 1000;
+            border: 1px solid #333;
+        }
+
+        .form-container h5 {
+            color: #00ffcc;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #00ffcc;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-family: 'Space Mono', monospace;
+            box-sizing: border-box;
+        }
+
+        .form-container input:focus,
+        .form-container textarea:focus {
+            outline: none;
+            border-color: #00ffcc;
+            box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.2);
+        }
+
+        .form-container button {
+            background: linear-gradient(135deg, #00ffcc, #00b8a3);
+            color: #0f0f0f;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 255, 204, 0.3);
+            width: 100%;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .form-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 255, 204, 0.4);
+        }
+
+        /* Messages - Updated styling */
+        .messages {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 1001;
+            width: 300px;
+        }
+
+        .alert {
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.1), rgba(0, 184, 163, 0.1));
+            border: 1px solid #00ffcc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+            font-family: 'Space Mono', monospace;
+        }
