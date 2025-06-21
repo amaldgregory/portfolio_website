@@ -12,11 +12,11 @@
 </head>
 <body>
 <nav>
-<a href="{% url 'portfolio_home' %}">About</a>
-<a href="{% url 'portfolio_home' %}#contact">Contact</a>
-<a href="{% url 'portfolio_home' %}#skills">Skills & Projects</a>
-<a href="#">Blog</a>
-<a href="{% url 'community_wall' %}">Community Wall</a>
+    <a href="{% url 'home' %}#about">About</a>
+    <a href="{% url 'home' %}#contact">Contact</a>
+    <a href="{% url 'home' %}#skills">Skills & Projects</a>
+    <a href="{% url 'post_list' %}">Blog</a>
+    <a href="{% url 'community_wall' %}">Community Wall</a>
 </nav>
 
 <div class="wall-container fade-in">

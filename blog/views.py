@@ -21,7 +21,7 @@ def post_create(request):
             return redirect('post_list')
     else:
         form = PostForm()
-    return render(request, 'blog/post_form.html', {'form': form})
+    return render(request, 'post_form.html', {'form': form})
 
 # Update View
 def post_update(request, slug):
