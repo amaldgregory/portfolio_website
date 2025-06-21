@@ -1,0 +1,22 @@
+{% extends "blog.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+  <section>
+    <h2>Blog Posts</h2>
+    <a href="{% url 'post_create' %}"><button>Create New Post</button></a>
+    <hr style="border-color: #333; margin: 2rem 0;">
+    {% for post in posts %}
+      <article>
+        <h3><a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a></h3>
+        <p style="color: #ccc; font-size: 0.9rem;">Published on {{ post.created_on|date:"F d, Y" }}</p>
+      </article>
+      {% if not forloop.last %}
+        <hr style="border-color: #333; margin: 1.5rem 0;">
+      {% endif %}
+    {% empty %}
+      <p>No posts have been written yet.</p>
+    {% endfor %}
+  </section>
+{% endblock %}

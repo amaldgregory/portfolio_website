@@ -1,0 +1,16 @@
+{% extends "blog.html" %}
+
+{% block title %}{% if post %}Edit Post{% else %}Create Post{% endif %}{% endblock %}
+
+{% block content %}
+  <section>
+    <h2>{% if post %}Edit "{{ post.title }}"{% else %}Create a New Post{% endif %}</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div style="color: #e0e0e0;">
+        {{ form.as_p }}
+      </div>
+      <button type="submit">{% if post %}Save Changes{% else %}Publish Post{% endif %}</button>
+    </form>
+  </section>
+{% endblock %}

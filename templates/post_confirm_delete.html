@@ -1,0 +1,15 @@
+{% extends "blog.html" %}
+
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+  <section>
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete the post titled "{{ post.title }}"?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" style="background: linear-gradient(135deg, #c43a3a, #9c2d2d);">Confirm Delete</button>
+      <a href="{% url 'post_detail' post.slug %}" style="margin-left: 1rem; color: #00ffcc;">Cancel</a>
+    </form>
+  </section>
+{% endblock %}
