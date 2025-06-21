@@ -160,3 +160,87 @@ button:hover {
 html {
   scroll-behavior: smooth;
 }
+
+
+/* Skills & Projects */
+#skills h2 {
+    margin-bottom: 2rem; /* Adds space between the title and the content */
+}
+
+.skills-list {
+    margin-bottom: 3rem; /* Increased space before projects */
+    text-align: center;
+}
+
+.skill-category {
+    display: inline-block;
+    vertical-align: top; /* Ensures alignment if descriptions have different lengths */
+    text-align: left;
+    margin: 0 1.5rem 1rem; /* Added bottom margin for responsiveness */
+}
+
+.skill-category h3 {
+    border-bottom: 2px solid #555;
+    padding-bottom: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category p {
+    margin: 0;
+    color: #ccc;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* A nice hover effect for the cards */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.project-card-content {
+    padding: 1rem;
+}
+
+.project-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #ccc; /* A slightly softer color for the description text */
+    line-height: 1.4;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #00ffcc;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.project-card a:hover {
+    color: #ffffff; /* Brightens the link on hover */
+}

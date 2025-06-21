@@ -93,47 +93,49 @@
             </div>
         </section>
 
-        <section id="skills">
+                <section id="skills">
             <h2>Skills & Projects</h2>
-            <div style="margin-bottom: 2rem; text-align: center;">
-                <div style="display: inline-block; text-align: left; margin: 0 1rem;">
-                    <h3 style="border-bottom: 2px solid #555; padding-bottom: 5px;">Languages</h3>
+            
+            <div class="skills-list">
+                <div class="skill-category">
+                    <h3>Languages</h3>
                     <p>Python, C++, Java, SQL</p>
                 </div>
-                <div style="display: inline-block; text-align: left; margin: 0 1rem;">
-                    <h3 style="border-bottom: 2px solid #555; padding-bottom: 5px;">ML/DL</h3>
-                    <p>TensorFlow, PyTorch, Scikit-learn, OpenCV</p>
+                <div class="skill-category">
+                    <h3>ML/DL</h3>
+                    <p>Scikit-learn, OpenCV, MediaPipe, LangChain</p>
                 </div>
-                <div style="display: inline-block; text-align: left; margin: 0 1rem;">
-                    <h3 style="border-bottom: 2px solid #555; padding-bottom: 5px;">Web & Tools</h3>
-                    <p>Django, HTML/CSS, Git, Docker</p>
+                <div class="skill-category">
+                    <h3>Web & Tools</h3>
+                    <p>Django, HTML/CSS, JavaScript, Git</p>
                 </div>
             </div>
 
-            <div class="projects-container" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <div class="projects-container">
                 
                 <!-- Project Card 1 -->
-                <div class="project-card" style="background-color: #2a2a2a; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); overflow: hidden; max-width: 300px; text-align: center;">
-                    <img src="{% static 'assets/project_1_semantic' %}" alt="Skill Fund Project" style="width: 100%; height: 180px; object-fit: cover;">
-                    <div style="padding: 1rem;">
-                        <h4 style="margin-top: 0;">Skill Fund</h4>
-                        <p style="font-size: 0.9rem;">A web platform built with Django for individuals and organizations to crowdfund and manage skill development initiatives.</p>
-                        <a href="https://github.com/amaldgregory/skill-fund" target="_blank" style="text-decoration: none; color: #00aaff;">View on GitHub</a>
+                <div class="project-card">
+                    <img src="{% static 'assets/project_2_basketball.png' %}" alt="Basketball Shot Form Analyzer">
+                    <div class="project-card-content">
+                        <h4>Basketball Shot Form Analyzer</h4>
+                        <p>A computer vision application using Mediapipe and OpenCV for real-time human pose estimation and object detection.</p>
+                        <a href="https://github.com/amaldgregory/basketball_computervision" target="_blank">View on GitHub</a>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card" style="background-color: #2a2a2a; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); overflow: hidden; max-width: 300px; text-align: center;">
-                    <img src="{% static 'assets/project_2_basketball' %}" alt="Pose Estimation Project" style="width: 100%; height: 180px; object-fit: cover;">
-                    <div style="padding: 1rem;">
-                        <h4 style="margin-top: 0;">Real-Time Pose Estimation</h4>
-                        <p style="font-size: 0.9rem;">A computer vision application using Movenet and OpenCV for real-time human pose estimation via webcam input[4].</p>
-                        <a href="https://github.com/amaldgregory/pose-estimation" target="_blank" style="text-decoration: none; color: #00aaff;">View on GitHub</a>
+                <div class="project-card">
+                    <img src="{% static 'assets/project_1_semantic.png' %}" alt="Semantic Book Recommender">
+                    <div class="project-card-content">
+                        <h4>Semantic Book Recommender</h4>
+                        <p>An AI-powered semantic book recommendation tool that suggests books based on natural language queries, category filters, and emotional tone.</p>
+                        <a href="https://github.com/amaldgregory/semantic_book_recommendation" target="_blank">View on GitHub</a>
                     </div>
                 </div>
 
             </div>
         </section>
+
     </div>
 </body>
 
