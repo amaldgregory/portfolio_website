@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('portfolio.urls'), name="home"),
     path('community/', include("community.urls")),
     path('blog/', include('blog.urls')),
+
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

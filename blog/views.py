@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required , permission_required
 
 # Read (List) View
 def post_list(request):
@@ -13,15 +14,22 @@ def post_detail(request, slug):
     return render(request, 'post_detail.html', {'post': post})
 
 # Create View
+@login_required 
+@permission_required('blog.add_post', raise_exception=True)
 def post_create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Don't save to the database just yet
+            post = form.save(commit=False)
+            # Assign the current logged-in user as the author
+            post.author = request.user 
+            # Now save the post with the author included
+            post.save()
             return redirect('post_list')
     else:
         form = PostForm()
-    return render(request, 'post_form.html', {'form': form})
+    return render(request, 'post_form.html', {'form': form})   
 
 # Update View
 def post_update(request, slug):
