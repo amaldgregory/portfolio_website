@@ -22,7 +22,7 @@ from blog import views as blog_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('portfolio.urls'), name="home"),
-    path('community/', include("community.urls")),
+    #path('community/', include("community.urls")),
     path('blog/', include('blog.urls')),
 
     path('accounts/register/', blog_views.register, name='register'),
