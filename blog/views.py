@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth import login
+from .forms import SignUpForm # Import the new form
 from django.contrib.auth.decorators import login_required , permission_required
 
 # Read (List) View
 def post_list(request):
-    posts = Post.objects.all()
+    posts = Post.objects.select_related('author').all()
     return render(request, 'post_list.html', {'posts': posts})
 
 # Read (Detail) View
@@ -50,3 +52,14 @@ def post_delete(request, slug):
         post.delete()
         return redirect('post_list')
     return render(request, 'post_confirm_delete.html', {'post': post})
+
+def register(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # This saves the new user
+            login(request, user)  # Log the user in automatically
+            return redirect('post_list')  # Redirect to the home page
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/register.html', {'form': form})

@@ -15,6 +15,22 @@
     <a href="{% url 'post_list' %}">Blog</a>
     <a href="{% url 'community_wall' %}">Community Wall</a>
 </nav>
+<nav style="text-align: right; padding: 1rem; background-color: #f0f0f0; border-bottom: 1px solid #ccc;">
+    {% if user.is_authenticated %}
+        <span>Welcome, <strong>{{ user.username }}</strong>!</span>
+
+        <form method="post" action="{% url 'logout' %}" style="display: inline; margin-left: 15px;">
+            {% csrf_token %}
+            <button type="submit" style="background:none; border:none; padding:0; color:blue; text-decoration:underline; cursor:pointer;">
+                Log Out
+            </button>
+        </form>
+        <a href="{% url 'post_create' %}" style="margin-left: 15px;">Create Post</a>
+    {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'register' %}" style="margin-left: 15px;">Register</a>
+    {% endif %}
+</nav>
     <div class="container">
         {% block content %}
         {% endblock %}

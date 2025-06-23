@@ -1,17 +1,14 @@
 {% extends "blog.html" %}
 
-{% block title %}{{ post.title }}{% endblock %}
-
 {% block content %}
-  <section>
-    <h2>{{ post.title }}</h2>
-    <p style="color: #ccc; font-size: 0.9rem;">Published on {{ post.created_on|date:"F d, Y" }}</p>
-    <div style="line-height: 1.6; margin-top: 1.5rem;">
-      {{ post.content|linebreaks }}
-    </div>
-    <div style="margin-top: 2rem;">
-      <a href="{% url 'post_update' post.slug %}"><button>Edit Post</button></a>
-      <a href="{% url 'post_delete' post.slug %}" style="margin-left: 1rem;"><button style="background: linear-gradient(135deg, #c43a3a, #9c2d2d);">Delete Post</button></a>
-    </div>
-  </section>
+    <article>
+        <h1>{{ post.title }}</h1>
+        <p>
+            <!-- Display the author's username -->
+            <em>by {{ post.author.username }} on {{ post.created_on|date:"F d, Y" }}</em>
+        </p>
+        <div>
+            {{ post.content|linebreaksbr }}
+        </div>
+    </article>
 {% endblock %}
