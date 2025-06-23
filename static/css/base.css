@@ -61,7 +61,11 @@ nav {
     border-bottom: 1px solid #333;
     z-index: 100;
     margin-bottom: 0;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 nav a {
@@ -243,4 +247,63 @@ html {
 
 .project-card a:hover {
     color: #ffffff; /* Brightens the link on hover */
+}
+
+/* blog nav bar fixes */
+.nav-links a {
+    display: inline-block;
+    margin: 0 1rem;
+    color: #00ffcc;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00ffcc;
+    transition: width 0.3s;
+    margin: auto;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* NEW: Styles for the user actions on the right */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Adds space between items */
+}
+
+.user-actions span {
+    color: #e0e0e0; /* Match body color */
+}
+
+.user-actions a {
+    color: #e0e0e0;
+    font-weight: bold;
+}
+
+.user-actions a:hover {
+    color: #00ffcc;
+    text-decoration: none;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #e0e0e0; /* Was blue, now fits theme */
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace; /* Inherit font */
+    font-size: 1em; /* Inherit font size */
+}
+
+.logout-button:hover {
+    color: #00ffcc;
 }
