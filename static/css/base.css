@@ -307,3 +307,138 @@ html {
 .logout-button:hover {
     color: #00ffcc;
 }
+
+/* 1. Main Post Article Container
+   This adopts the style of your existing <section> elements.
+*/
+.post {
+    margin-top: 2rem; /* Give it some space from the header/nav */
+    padding: 2rem 2.5rem; /* A bit more horizontal padding for prose */
+    border: 1px solid #333;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(26,26,26,0.7), rgba(37,37,37,0.7));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add the same cool hover effect from your sections */
+.post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 255, 204, 0.1);
+}
+
+/* 2. Post Header, Title, and Metadata */
+.post-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #333; /* Separator for the header */
+    padding-bottom: 2rem;
+}
+
+.post-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    /* Use the same stunning gradient text effect from your main header */
+    background: linear-gradient(135deg, #e0e0e0, #eaeaea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.post-meta {
+    font-size: 1rem;
+    color: #e0e0e0;
+    opacity: 0.8; /* Slightly muted for secondary info */
+}
+
+/* 3. Post Content Area */
+.post-content {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Monospace fonts need more line height for readability */
+}
+
+/* Ensure paragraphs have good spacing */
+.post-content p {
+    margin-bottom: 1.5em;
+}
+
+/* Style links within the post content to match the theme */
+.post-content a {
+    color: #00ffcc;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 255, 204, 0.5);
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+    text-decoration-color: #00ffcc;
+    background-color: rgba(0, 255, 204, 0.1); /* Subtle highlight on hover */
+}
+
+/* 4. Thematic Buttons for Post Actions */
+.post-footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333; /* Separator for the footer */
+    text-align: center;
+}
+
+.action-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Re-style the .btn classes to match your existing <button> style */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Primary Button (Edit Post) - Matches your main button style */
+.btn-primary {
+    background: linear-gradient(135deg, #00ffcc, #00b8a3);
+    color: #0f0f0f;
+    box-shadow: 0 4px 16px rgba(0, 255, 204, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 255, 204, 0.4);
+}
+
+/* Danger Button (Delete Post) - A thematically appropriate danger style */
+.btn-danger {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(255, 77, 77, 0.3);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 77, 77, 0.4);
+}
+
+/* Secondary Button (Back to list) - A more subtle, outlined style */
+.btn-secondary {
+    background: transparent;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+    color: #00ffcc;
+}

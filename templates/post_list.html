@@ -1,7 +1,14 @@
 {% extends "blog.html" %}
 
 {% block content %}
-    <h1>Blog Posts</h1>
+    <h1>The Community Blog</h1>
+    <hr>
+    <h4>This is an open space for anyone to share their thoughts once they register on the top right of the website.<br>
+    Once you sign up, I will review your request and get back to you by the end of the day.<br>
+    This space is open to everyone — whether you're into tech, art, sports or anything in between.<br>
+    You can always edit or delete your posts and comments as per your convenience.<br></h4>
+    <hr>
+    <hr>
     {% for post in posts %}
         <article>
             <h2><a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
