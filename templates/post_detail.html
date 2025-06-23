@@ -10,5 +10,13 @@
         <div>
             {{ post.content|linebreaksbr }}
         </div>
+        <hr>
+
+        {% if user.is_authenticated and user == post.author %}
+            <a href="{% url 'post_update' slug=post.slug %}" class="btn btn-primary">Edit Post</a>
+            <a href="{% url 'post_delete' slug=post.slug %}" class="btn btn-danger">Delete Post</a>
+        {% endif %}
+        
+        <a href="{% url 'post_list' %}" class="btn btn-secondary">Back to Post List</a>
     </article>
 {% endblock %}

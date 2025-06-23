@@ -4,6 +4,7 @@ from .forms import PostForm
 from django.contrib.auth import login
 from .forms import SignUpForm # Import the new form
 from django.contrib.auth.decorators import login_required , permission_required
+from django.core.exceptions import PermissionDenied
 
 # Read (List) View
 def post_list(request):
@@ -46,8 +47,12 @@ def post_update(request, slug):
     return render(request, 'post_form.html', {'form': form, 'post': post})
 
 # Delete View
+@login_required
 def post_delete(request, slug):
     post = get_object_or_404(Post, slug=slug)
+    if post.author != request.user:
+        raise PermissionDenied 
+    
     if request.method == 'POST':
         post.delete()
         return redirect('post_list')
